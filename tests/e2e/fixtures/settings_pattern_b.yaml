@@ -1,6 +1,6 @@
 # settings_pattern_b.yaml — Pattern B: Claude + Codex mixed
 # Used for E2E testing with mock CLIs
-language: ja
+language: en
 shell: bash
 display_mode: silent
 

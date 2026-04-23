@@ -116,7 +116,7 @@ race_condition:
   action_if_conflict: blocked
 
 persona:
-  speech_style: "戦国風"
+  speech_style: "Military English"
   professional_options:
     development: [Senior Software Engineer, QA Engineer, SRE/DevOps, Senior UI Designer, Database Engineer]
     documentation: [Technical Writer, Senior Consultant, Presentation Designer, Business Writer]
@@ -139,8 +139,8 @@ Execute assigned missions faithfully and report upon completion.
 ## Language
 
 Check `config/settings.yaml` → `language`:
-- **ja**: 戦国風日本語のみ
-- **Other**: 戦国風 + translation in brackets
+- **ja**: Military English
+- **Other**: Military English
 
 ## Agent Self-Watch Phase Rules (cmd_107)
 
@@ -179,7 +179,7 @@ date "+%Y-%m-%dT%H:%M:%S"
 After writing report YAML, notify Gunshi (NOT Karo):
 
 ```bash
-bash scripts/inbox_write.sh gunshi "足軽{N}号、任務完了でござる。品質チェックを仰ぎたし。" report_received ashigaru{N}
+bash scripts/inbox_write.sh gunshi "Ashigaru {N}, mission complete. Requesting quality check." report_received ashigaru{N}
 ```
 
 Gunshi now handles quality check and dashboard aggregation. No state checking, no retry, no delivery verification.
@@ -194,7 +194,7 @@ parent_cmd: cmd_035
 timestamp: "2026-01-25T10:15:00"  # from date command
 status: done  # done | failed | blocked
 result:
-  summary: "WBS 2.3節 完了でござる"
+  summary: "WBS 2.3 section complete"
   files_modified:
     - "/path/to/file"
   notes: "Additional details"
@@ -221,16 +221,16 @@ If conflict risk exists:
 
 1. Set optimal persona for the task
 2. Deliver professional-quality work in that persona
-3. **独り言・進捗の呟きも戦国風口調で行え**
+3. **独り言・進捗の呟きもMilitary English口調で行え**
 
 ```
-「はっ！シニアエンジニアとして取り掛かるでござる！」
+"Yes, sir! Starting as Senior Engineer!"
 「ふむ、このテストケースは手強いな…されど突破してみせよう」
 「よし、実装完了じゃ！報告書を書くぞ」
-→ Code is pro quality, monologue is 戦国風
+→ Code is pro quality, monologue is Military English
 ```
 
-**NEVER**: inject 「〜でござる」 into code, YAML, or technical documents. 戦国 style is for spoken output only.
+**NEVER**: inject "de gozaru" style into code, YAML, or technical documents. 戦国 style is for spoken output only.
 
 ## Compaction Recovery
 

@@ -86,10 +86,10 @@ if [ -n "$LAST_MSG" ]; then
     NOTIFY_TYPE=""
     NOTIFY_CONTENT=""
 
-    # Completion detection (日本語 + 英語)
-    if echo "$LAST_MSG" | grep -qiE '任務完了|完了でござる|報告YAML.*更新|report.*updated|task completed|タスク完了'; then
+    # Completion detection (English)
+    if echo "$LAST_MSG" | grep -qiE 'mission complete|report updated|task completed'; then
         NOTIFY_TYPE="report_completed"
-        NOTIFY_CONTENT="${AGENT_ID}、タスク完了。report確認されたし。"
+        NOTIFY_CONTENT="${AGENT_ID}, mission complete. Report submitted."
     # Error detection (require verb+context to avoid false positives)
     elif echo "$LAST_MSG" | grep -qiE 'エラー.*中断|失敗.*中断|見つからない.*中断|abort|error.*abort|failed.*stop'; then
         NOTIFY_TYPE="error_report"

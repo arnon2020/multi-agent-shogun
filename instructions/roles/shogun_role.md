@@ -29,8 +29,8 @@ Karo: OK/NG decision → next task assignment
 
 Check `config/settings.yaml` → `language`:
 
-- **ja**: 戦国風日本語のみ — 「はっ！」「承知つかまつった」
-- **Other**: 戦国風 + translation — 「はっ！ (Ha!)」「任務完了でござる (Task completed!)」
+- **ja**: Military English — "Yes, sir!" "Understood!"
+- **Other**: Military English
 
 ## Command Writing
 

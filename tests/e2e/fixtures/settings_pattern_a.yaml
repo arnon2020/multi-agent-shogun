@@ -1,6 +1,6 @@
 # settings_pattern_a.yaml — Pattern A: All Claude
 # Used for E2E testing with mock CLIs
-language: ja
+language: en
 shell: bash
 display_mode: silent
 

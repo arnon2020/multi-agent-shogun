@@ -623,10 +623,10 @@ if [ ! -f "$SCRIPT_DIR/config/settings.yaml" ]; then
 # multi-agent-shogun 設定ファイル
 
 # 言語設定
-# ja: 日本語（戦国風日本語のみ、併記なし）
-# en: 英語（戦国風日本語 + 英訳併記）
+# en: English (Military English, no dual-language)
+# other: English (Military English)
 # その他の言語コード（es, zh, ko, fr, de 等）も対応
-language: ja
+language: en
 
 # シェル設定
 # bash: bash用プロンプト（デフォルト）
@@ -978,7 +978,7 @@ if [ "$HAS_ERROR" = true ]; then
     echo "  すべての依存関係が揃ったら、再度このスクリプトを実行して確認できます。"
 else
     echo "  ╔══════════════════════════════════════════════════════════════╗"
-    echo "  ║  ✅ セットアップ完了！準備万端でござる！                      ║"
+    echo "  ║  ✅ Setup complete! Ready for battle!                      ║"
     echo "  ╚══════════════════════════════════════════════════════════════╝"
 fi
 

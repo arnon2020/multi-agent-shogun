@@ -70,7 +70,7 @@ else
 fi
 _ASHIGARU_COUNT=$(echo "$_ASHIGARU_IDS_STR" | wc -w | tr -d ' ')
 
-# 色付きログ関数（戦国風）
+# Colored log functions (Military English)
 log_info() {
     echo -e "\033[1;33m【報】\033[0m $1"
 }
@@ -191,8 +191,8 @@ while [[ $# -gt 0 ]]; do
             echo "                      未指定時は config/settings.yaml の設定を使用"
             echo "  --auto-mode-on      Claude を --permission-mode auto-approved で起動"
             echo "  --permission-mode M Claude の permission mode を明示指定"
-            echo "  -S, --silent        サイレントモード（足軽の戦国echo表示を無効化・API節約）"
-            echo "                      未指定時はshoutモード（タスク完了時に戦国風echo表示）"
+            echo "  -S, --silent        Silent mode (disable military echo for ashigaru, saves API)"
+            echo "                      Default: shout mode (military echo on task completion)"
             echo "  -h, --help          このヘルプを表示"
             echo ""
             echo "例:"
@@ -220,7 +220,7 @@ while [[ $# -gt 0 ]]; do
             echo "  決戦の陣（--kessen）:   全足軽=Opus, 軍師=Opus"
             echo ""
             echo "表示モード:"
-            echo "  shout（デフォルト）:  タスク完了時に戦国風echo表示"
+            echo "  shout (default): Military echo on task completion"
             echo "  silent（--silent）:   echo表示なし（API節約）"
             echo ""
             echo "エイリアス:"
@@ -292,14 +292,14 @@ show_battle_cry() {
 
 ASHIGARU_EOF
 
-    echo -e "                    \033[1;36m「「「 はっ！！ 出陣いたす！！ 」」」\033[0m"
+    echo -e "                    \033[1;36mYes, sir! Deploying to battle!\033[0m"
     echo ""
 
     # ═══════════════════════════════════════════════════════════════════════════
     # システム情報
     # ═══════════════════════════════════════════════════════════════════════════
     echo -e "\033[1;33m  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\033[0m"
-    echo -e "\033[1;33m  ┃\033[0m  \033[1;37m🏯 multi-agent-shogun\033[0m  〜 \033[1;36m戦国マルチエージェント統率システム\033[0m 〜           \033[1;33m┃\033[0m"
+    echo -e "\033[1;33m  ┃\033[0m  \033[1;37m🏯 multi-agent-shogun\033[0m  〜 \033[1;36mMulti-Agent Orchestration System\033[0m 〜           \033[1;33m┃\033[0m"
     echo -e "\033[1;33m  ┃\033[0m                                                                           \033[1;33m┃\033[0m"
     echo -e "\033[1;33m  ┃\033[0m  \033[1;35m将軍\033[0m: 統括  \033[1;31m家老\033[0m: 管理  \033[1;33m軍師\033[0m: 戦略(Opus)  \033[1;34m足軽\033[0m: 実働×7  \033[1;33m┃\033[0m"
     echo -e "\033[1;33m  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\033[0m"
@@ -441,7 +441,7 @@ if [ "$CLEAN_MODE" = true ]; then
     TIMESTAMP=$(date "+%Y-%m-%d %H:%M")
 
     if [ "$LANG_SETTING" = "ja" ]; then
-        # 日本語のみ
+        # English only
         cat > ./dashboard.md << EOF
 # 📊 戦況報告
 最終更新: ${TIMESTAMP}
@@ -449,7 +449,7 @@ if [ "$CLEAN_MODE" = true ]; then
 ## 🚨 要対応 - 殿のご判断をお待ちしております
 なし
 
-## 🔄 進行中 - 只今、戦闘中でござる
+## 🔄 In Progress - Currently in Battle
 なし
 
 ## ✅ 本日の戦果
@@ -469,7 +469,7 @@ if [ "$CLEAN_MODE" = true ]; then
 なし
 EOF
     else
-        # 日本語 + 翻訳併記
+        # English with translation
         cat > ./dashboard.md << EOF
 # 📊 戦況報告 (Battle Status Report)
 最終更新 (Last Updated): ${TIMESTAMP}
@@ -477,7 +477,7 @@ EOF
 ## 🚨 要対応 - 殿のご判断をお待ちしております (Action Required - Awaiting Lord's Decision)
 なし (None)
 
-## 🔄 進行中 - 只今、戦闘中でござる (In Progress - Currently in Battle)
+## 🔄 In Progress - Currently in Battle (In Progress - Currently in Battle)
 なし (None)
 
 ## ✅ 本日の戦果 (Today's Achievements)
